@@ -20,11 +20,11 @@ const route=require("./routes/firstroute")
 app.use(route)
 
 const database=require("./config/database")
-// database()
+ database()
 
 app.get('/',(req,res)=>{
   app.use(express.static(path.resolve(__dirname,"frontend" , "build")));
   res.sendFile(path.resolve(__dirname, "frontend","build","index.html"))
 })
 
-app.listen(3000,()=>{console.log(`ram ram port--> ${PORT}`)})
+app.listen(PORT,()=>{console.log(`ram ram port--> ${PORT}`)})
