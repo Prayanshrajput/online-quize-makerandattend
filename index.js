@@ -20,7 +20,7 @@ const route=require("./routes/firstroute")
 app.use(route)
 
 const database=require("./config/database")
-//  database()
+  database()
 
 app.get('/',(req,res)=>{
   app.use(express.static(path.resolve(__dirname,"frontend" , "build")));
