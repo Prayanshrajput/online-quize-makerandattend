@@ -49,75 +49,75 @@ console.log(obj)
 
 
 
-  return (
- <div className="flex justify-center items-center  h-screen w-screen bg-blue-300">
-      <div className="flex flex-col border w-[50%] h-screen border-black gap-5">
-
-<div className="flex justify-around text-[20px] font-bold">
-  <div>NUMBER OF QUESTION</div>
-  <div>{quecount}</div>
-</div>
-
-{/* questions */}
-<div className="flex flex-col">
-<label className="text-[20px] font-bold" htmlFor="">Question</label>
-<input className=" text-[20px] font-semibold text-black  border border-black bg-slate-300 " type="text" name="question" value={obj.question} id="" onChange={maininputhandler} />
-</div>
-
-{/* option for  */}
-<label className="text-[20px] font-bold" htmlFor="options">Options( Minimum 2 )</label>
-<div>
-<input className="border border-black" type="text" name="options" value={inp} onChange={changehandler} />
-<button className="font-bold bg-gray-500 hover:bg-green-400" onClick={()=>{
-  setobj((prev)=>{return {...prev,options:[...obj.options,inp]}})
-  setinp("")
-}}>ADD</button>
-</div>
-
-<label className="text-[20px] font-bold" htmlFor="">Answer( Present in Options)</label>
-<input className="border border-black" type="text" name="answer" id="" value={obj.answer} onChange={maininputhandler} />
-<div className="flex justify-center">
-<button className="font-extrabold text-[20px] bg-red-500 hover:bg-green-600" onClick={submithandler}>Add question</button>
-</div>
-
-</div>
-
-<div className="flex flex-col border w-[50%] h-screen border-black gap-5">
-<div className="flex flex-col border  h-[60%] border-black gap-5">
-  <h1 className="text-[20px] font-bold">Current question</h1>
-  <h3 className="text-[18px] font-semibold" >{obj.question||"None"}</h3>
-  {
-   obj.options.length>0&&obj.options.map((data,index)=>{return <li key={index} className="text-[15px] font-semibold" >{data}</li>})
-  }
-  <div className="flex gap-5">
-  <label className="text-[20px] font-bold" htmlFor="">Answer --&gt; </label>
-  <h4 className=" text-green-600 font-bold text-[20px]">{obj.answer||"None"}</h4>
-  </div>
-</div>
-
-<div className="flex justify-center gap-5">
-
-<div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-blue-500 hover:bg-blue-800 hover:text-white"
-onClick={()=>{
-  toast.success("Only working question is reset")
-  setobj({question:"",options:[],answer:"",idofquize:obj.idofquize})
-}}
->
-  Reset
-</div>
-
-<div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-red-400 hover:bg-red-700 hover:text-white"
-onClick={()=>{
-  setobj({question:"",options:[],answer:"",idofquize:""})
-}}
->
-  FINISH
-</div>
-
-</div>
-</div>
-
-<ToastContainer />
+return (
+  <div className="flex flex-col md:flex-row justify-center items-center  h-fit w-screen bg-blue-300">
+       <div className="flex flex-col border w-screen  md:w-[50%] h-fit border-black gap-5">
+ 
+ <div className="flex justify-around text-[20px] font-bold">
+   <div>NUMBER OF QUESTION</div>
+   <div>{quecount}</div>
  </div>
-  )
+ 
+ {/* questions */}
+ <div className="flex flex-col">
+ <label className="text-[20px] font-bold" htmlFor="">Question</label>
+ <input className=" text-[20px] font-semibold text-black  border border-black bg-slate-300 " type="text" name="question" value={obj.question} id="" onChange={maininputhandler} />
+ </div>
+ 
+ {/* option for  */}
+ <label className="text-[20px] font-bold" htmlFor="options">Options( Minimum 2 )</label>
+ <div>
+ <input className="border border-black" type="text" name="options" value={inp} onChange={changehandler} />
+ <button className="font-bold bg-gray-500 hover:bg-green-400" onClick={()=>{
+   setobj((prev)=>{return {...prev,options:[...obj.options,inp]}})
+   setinp("")
+ }}>ADD</button>
+ </div>
+ 
+ <label className="text-[20px] font-bold" htmlFor="">Answer( Present in Options)</label>
+ <input className="border border-black" type="text" name="answer" id="" value={obj.answer} onChange={maininputhandler} />
+ <div className="flex justify-center">
+ <button className="font-extrabold text-[20px] bg-red-500 hover:bg-green-600" onClick={submithandler}>Add question</button>
+ </div>
+ 
+ </div>
+ 
+ <div className="flex flex-col justify-end border h-fit w-screen md:w-[50%] md:h-screen border-black gap-5">
+ <div className="flex flex-col border  h-[60%] border-black gap-5">
+   <h1 className="flex flex-wrap text-[20px] font-bold break-words">Current question</h1>
+   <div className="text-[18px] font-semibold ml-2  w-[96%]  center break-words  " >{obj.question||"None"}</div>
+   {
+    obj.options.length>0&&obj.options.map((data,index)=>{return <li key={index} className="text-[15px] font-semibold" >{data}</li>})
+   }
+   <div className="flex gap-5">
+   <label className="text-[20px] font-bold " htmlFor="">Answer --&gt; </label>
+   <div className=" text-green-600 font-bold text-[20px] w-[60%] break-words  ">{obj.answer||"None"}</div>
+   </div>
+ </div>
+ 
+ <div className="flex justify-center gap-5">
+ 
+ <div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-blue-500 hover:bg-blue-800 hover:text-white"
+ onClick={()=>{
+   toast.success("Only working question is reset")
+   setobj({question:"",options:[],answer:"",idofquize:obj.idofquize})
+ }}
+ >
+   Reset
+ </div>
+ 
+ <div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-red-400 hover:bg-red-700 hover:text-white"
+ onClick={()=>{
+   setobj({question:"",options:[],answer:"",idofquize:""})
+ }}
+ >
+   FINISH
+ </div>
+ 
+ </div>
+ </div>
+ 
+ <ToastContainer />
+  </div>
+   )
 }

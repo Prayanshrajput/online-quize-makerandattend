@@ -12,16 +12,23 @@ import { Home } from './components/Home.jsx'
 
 const router=createBrowserRouter([
   {
+    path:"*",
+    element: <Layout/>,
+
+    children:[
+      {
+        path: "*",
+        element :<Home></Home>
+      }
+    ]
+  },
+  {
     path: "/",
     element : <Layout/>,
   
    children:[
     {
       path: "/",
-      element :<Home></Home>
-    },
-    {
-      path: "/home",
       element :<Home></Home>
     },
     {
