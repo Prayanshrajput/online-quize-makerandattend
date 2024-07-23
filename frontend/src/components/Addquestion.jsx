@@ -50,8 +50,8 @@ console.log(obj)
 
 
 return (
-  <div className="flex flex-col md:flex-row justify-center items-center  h-fit w-screen bg-blue-300">
-       <div className="flex flex-col border w-screen  md:w-[50%] h-fit border-black gap-5">
+  <div className="flex flex-col md:flex-row  h-fit w-screen bg-blue-300">
+       <div className="flex flex-col border w-screen md:w-[50%] h-fit border-black gap-5">
  
  <div className="flex justify-around text-[20px] font-bold">
    <div>NUMBER OF QUESTION</div>
@@ -82,7 +82,7 @@ return (
  
  </div>
  
- <div className="flex flex-col justify-end border h-fit w-screen md:w-[50%] md:h-screen border-black gap-5">
+ <div className="flex flex-col justify-end border h-fit w-screen md:w-[50%] md:justify-start md:h-screen border-black gap-5">
  <div className="flex flex-col border  h-[60%] border-black gap-5">
    <h1 className="flex flex-wrap text-[20px] font-bold break-words">Current question</h1>
    <div className="text-[18px] font-semibold ml-2  w-[96%]  center break-words  " >{obj.question||"None"}</div>
