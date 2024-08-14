@@ -39,7 +39,7 @@ console.log(score)
     {data.options.map((data,index)=>{
      return <div
      key={index}
-      className={`flex w-[300px] h-[70px]  hover:bg-white justify-center items-center border border-black ${selectedoption==index?`bg-white`:`bg-transparent`} `}
+      className={`flex w-[300px] h-[70px]   hover:bg-white justify-center items-center border border-black ${selectedoption==index?`bg-white`:`bg-transparent`} `}
        onClick={optionshandler}
       selected={selectedoption}
       id={index}

@@ -2,15 +2,15 @@ const title=require("../models/titleofquize")
 
 exports.titlesave= async(req,res)=>{
     try{
-const{quizetitle,time}=req.body
+const{quizetitle,time,email}=req.body
 
-const ct= new title({nameofquize:quizetitle,idofquize:Date.now(),time})
+const newquiz= new title({nameofquize:quizetitle,idofquize:Date.now(),time,email})
 
-const savetitle=ct.save()
+const savetitle=newquiz.save()
 
 res.json({
     success:true,
-    message:ct
+    message:newquiz
 })
     }
     catch(error){

@@ -1,15 +1,31 @@
 import { Children, createContext, useEffect, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import Cookies from "js-cookie";
 
 export const Datacontext=createContext()
 
 export default function DatacontextProvider({children}){
+
+    const [cookies, setCookie,removeCookie] = useCookies(['authToken']);
 const[idofquize,setidofquize]=useState("")
-const[obj,setobj]=useState({question:"",options:[],answer:""})
+const[obj,setobj]=useState({question:"",options:[],answer:-1})
 const[quiz,setquiz]=useState([])
 const[id,setid]=useState({})
 const[score,setScores]=useState([])
 const[time,settime]=useState(false)
+const[log,setlog]=useState(false)
+const [mainarr,setmainarr]=useState([])
+const[ind,setind]=useState(0)
+const[selectedoption,setsetectedoption]=useState(score)
 const num=true;
+
+useEffect(()=>{
+    const data=Cookies.get("token")
+    fetchquize()
+    if(data){
+        setlog(true)
+    }
+},[])
 
 const fetchquize=async()=>{
     try{
@@ -22,7 +38,7 @@ const data= await response.json();
     }
 }
 
-fetchquize()
+
 const value={
     idofquize,setidofquize,
     time,settime,
@@ -30,7 +46,9 @@ const value={
     obj,setobj,
     quiz,setquiz,
     id,setid,
-    num
+    num,log,setlog,mainarr,setmainarr,ind,setind,
+    selectedoption,setsetectedoption,
+    cookies, setCookie,removeCookie,
 }
 
 return <Datacontext.Provider value={value}>

@@ -12,7 +12,7 @@ const question=new mongoose.Schema({
     ]
     ,
     answer:{
-        type:String,
+        type:Number,
         require:true
     },
     idofquize:{

@@ -3,33 +3,48 @@ import { Datacontext } from '../context/Datacontext'
 
 
 export const Result = () => {
-    const{score,setScores,setid}=useContext(Datacontext)
-    const[correct,setcorrect]=useState(0)
-    const[incorect,setincorect]=useState(0)
+    const{score,setScores,setid,setind,selectedoption,setsetectedoption,mainarr}=useContext(Datacontext)
+    
+let plus=0;
+let minus=0;
+ 
+useEffect(()=>{
+  setsetectedoption([])
+setind(0);
+},[])
 
+mainarr.map((data,index)=>{
+  if(data.answer==selectedoption[index]){
+    console.log(data.answer,selectedoption[index])
+    plus++;
+  }
+  else if(selectedoption[index]!=-1){
+    minus++;
+  }
+})
 
+  //  useEffect(
+  //   ()=>{
+  //     setScores(score)
+  //       score.map(data=>{
+  //           if(data==100){
 
-   useEffect(
-    ()=>{
-      setScores(score)
-        score.map(data=>{
-            if(data==100){
-
-              setcorrect(correct+1)
+  //             setcorrect(correct+1)
           
-            }
-            else if(data==-1){
+  //           }
+  //           else if(data==-1){
             
-              setincorect(incorect+1)
+  //             setincorect(incorect+1)
          
-            }
+  //           }
              
-        })
-    },
-    []
-   )
+  //       })
+  //   },
+  //   []
+  //  )
 
-
+  const[correct,setcorrect]=useState(plus)
+  const[incorect,setincorect]=useState(minus)
 
 
   return (
@@ -40,7 +55,7 @@ export const Result = () => {
         </div>
       <div className="flex gap-5">
       <div className="flex w-[150px] h-[100px]  text-[20px] font-bold justify-center items-center  bg-blue-400">
-       Total  {score.length}
+       Total  {mainarr.length}
         </div>
         <div className="flex w-[150px] h-[100px]   text-[20px] font-bold justify-center items-center  bg-green-400">
         Correct  {correct}

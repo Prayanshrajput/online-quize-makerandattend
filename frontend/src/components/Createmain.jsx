@@ -3,11 +3,12 @@ import { Datacontext } from '../context/Datacontext'
 import { Addquestion } from './Addquestion'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie'
 
 
 export const Createmain = () => {
     const{id,setid,setobj,obj}=useContext(Datacontext)
-    const[data,setdata]=useState({quizetitle:"",time:""})
+    const[data,setdata]=useState({quizetitle:"",time:"",email:Cookies.get("data")})
 
     if(id){
       setid(" ")
@@ -24,6 +25,7 @@ if(obj.idofquize){
 
 
     const submithandler=async ()=>{
+        setobj((prev)=>{return {...prev,"idofquize":123}})
         if(data.quizetitle&&data.time){
             try{
                 const response=await fetch(`${window.location.origin}/createtitle`,{
@@ -34,6 +36,7 @@ if(obj.idofquize){
                       }
                 })
     
+
                 const ans= await response.json()
                 console.log(ans.message)
                  setobj((prev)=>{return {...prev,"idofquize":ans.message.idofquize}})

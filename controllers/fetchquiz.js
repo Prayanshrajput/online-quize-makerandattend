@@ -16,3 +16,21 @@ res.json({
         })
     }
 }
+
+exports.userquiz=async (req,res)=>{
+    try{
+        const{email}=req.body
+const quizdata=await title.find({email})
+
+res.json({
+    success:true,
+    quizdata
+})
+    }
+    catch(error){
+        res.json({
+            success:false,
+            message:error.message
+        })
+    }
+}

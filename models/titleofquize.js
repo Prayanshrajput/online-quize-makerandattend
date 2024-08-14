@@ -13,6 +13,12 @@ const title=new mongoose.Schema({
     },
     time:{
         type:String
+    },
+    access:{
+        type:String
+    },
+    email:{
+        type:String
     }
 })
 

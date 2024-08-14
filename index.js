@@ -22,19 +22,21 @@ app.use(route)
 const database=require("./config/database")
   database()
 
- 
-
-// app.get('/',(req,res)=>{
-//   app.use(express.static(path.resolve(__dirname,"frontend" , "dist")));
-//   res.sendFile(path.resolve(__dirname, "frontend","dist","index.html"))
-// })
-
-app.use(express.static(path.resolve(__dirname,"frontend" ,"build")));
+app.use(express.static(path.resolve(__dirname,"frontend" ,"dist")));
 
 app.get('*',(req,res)=>{
  
-  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"))
+  res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"))
 })
 
 
 app.listen(PORT,()=>{console.log(`ram ram port--> ${PORT}`)})
+
+
+
+
+
+
+
+
+

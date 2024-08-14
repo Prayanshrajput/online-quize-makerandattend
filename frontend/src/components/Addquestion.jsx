@@ -26,7 +26,7 @@ const postdata = async () => {
       }
     });
     const result = await res.json();
-    setobj((prev)=>{return {...prev,question:"",options:[],answer:""}})
+    setobj((prev)=>{return {...prev,question:"",options:[],answer:-1}})
     setquecount((prev)=>prev+1)
     toast.success("Question Successfull Added")
   } catch (error) {
@@ -36,9 +36,13 @@ const postdata = async () => {
 
 const submithandler= (e)=>{
 //  setmainarr(prev=>[...prev,obj])
- obj.idofquize&&obj.question&&obj.options.length>1&&obj.answer?postdata():toast.error("Please complete all the entry")
- obj({question:"",options:[],answer:"",idofquize:obj.idofquize})
- console.log(obj)
+if(obj.answer==-1){
+toast.error("Firstly select right answer")
+}
+else{
+ obj.idofquize&&obj.question&&obj.options.length>1?postdata():toast.error("Please complete all the entry")
+ obj({question:"",options:[],answer:-1,idofquize:obj.idofquize})
+ console.log(obj)}
 }
 
 
@@ -47,7 +51,10 @@ setobj((prev)=>{return {...prev,[e.target.name]:e.target.value}})
 console.log(obj)
 }
 
-
+const answerhandler=(e)=>{
+  console.log(e.target.value)
+  setobj((prev)=>{return {...prev,answer:e.target.value}})
+}
 
 return (
   <div className="flex flex-col md:flex-row  h-fit w-screen bg-blue-300">
@@ -75,7 +82,7 @@ return (
  </div>
  
  <label className="text-[20px] font-bold" htmlFor="">Answer( Present in Options)</label>
- <input className="border border-black" type="text" name="answer" id="" value={obj.answer} onChange={maininputhandler} />
+ {/* <input className="border border-black" type="text" name="answer" id="" value={obj.answer} onChange={maininputhandler} /> */}
  <div className="flex justify-center">
  <button className="font-extrabold text-[20px] bg-red-500 hover:bg-green-600" onClick={submithandler}>Add question</button>
  </div>
@@ -87,11 +94,11 @@ return (
    <h1 className="flex flex-wrap text-[20px] font-bold break-words">Current question</h1>
    <div className="text-[18px] font-semibold ml-2  w-[96%]  center break-words  " >{obj.question||"None"}</div>
    {
-    obj.options.length>0&&obj.options.map((data,index)=>{return <li key={index} className="text-[15px] font-semibold" >{data}</li>})
+    obj.options.length>0&&obj.options.map((data,index)=>{return <li onClick={answerhandler} key={index} value={index} className="text-[15px] font-semibold" >{data}</li>})
    }
    <div className="flex gap-5">
    <label className="text-[20px] font-bold " htmlFor="">Answer --&gt; </label>
-   <div className=" text-green-600 font-bold text-[20px] w-[60%] break-words  ">{obj.answer||"None"}</div>
+   <div className=" text-green-600 font-bold text-[20px] w-[60%] break-words  ">{obj.options[obj.answer]||"None"}</div>
    </div>
  </div>
  
@@ -100,7 +107,7 @@ return (
  <div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-blue-500 hover:bg-blue-800 hover:text-white"
  onClick={()=>{
    toast.success("Only working question is reset")
-   setobj({question:"",options:[],answer:"",idofquize:obj.idofquize})
+   setobj({question:"",options:[],answer:-1,idofquize:obj.idofquize})
  }}
  >
    Reset
@@ -108,7 +115,7 @@ return (
  
  <div className="flex justify-center items-center text-[2 font-bold 0px] w-[100px] h-[50px] bg-red-400 hover:bg-red-700 hover:text-white"
  onClick={()=>{
-   setobj({question:"",options:[],answer:"",idofquize:""})
+   setobj({question:"",options:[],answer:-1,idofquize:""})
  }}
  >
    FINISH

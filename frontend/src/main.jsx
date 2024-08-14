@@ -9,19 +9,13 @@ import { Layout } from './components/Layout.jsx'
 import { Quiz } from './components/Quiz.jsx'
 import { Result } from './components/Result.jsx'
 import { Home } from './components/Home.jsx'
+import { Login } from './components/Login.jsx'
+import { Profile } from './components/Profile.jsx'
+import { Singup } from './components/Singup.jsx'
+import { Protected } from './components/Protected.jsx'
+import { Question } from './components/Question.jsx'
 
 const router=createBrowserRouter([
-  {
-    path:"*",
-    element: <Layout/>,
-
-    children:[
-      {
-        path: "*",
-        element :<Home></Home>
-      }
-    ]
-  },
   {
     path: "/",
     element : <Layout/>,
@@ -32,8 +26,12 @@ const router=createBrowserRouter([
       element :<Home></Home>
     },
     {
+      path: "/*",
+      element :<Home></Home>
+    },
+    {
       path: "/createquiz",
-      element : <Createmain/>
+      element : <Protected Componet={Createmain}></Protected>
     },
     {
       path:"/quiz",
@@ -42,6 +40,22 @@ const router=createBrowserRouter([
     {
       path:"/result",
       element:<Result></Result>
+    },
+    {
+      path:"/login",
+      element:<Login></Login>
+    },
+    {
+      path:"/singup",
+      element:<Singup></Singup>
+    },
+    {
+      path:"/profile",
+      element:<Protected Componet={Profile}></Protected>
+    },
+    {
+      path:"/try",
+      element:<Question></Question>
     }
   ]
 },

@@ -3,14 +3,15 @@ import { Datacontext } from '../context/Datacontext'
 import { Singlequestion } from './Singlequestion'
 import { Result } from './Result'
 import { Timer } from './Timer'
+import { Question } from './Question'
 
 export const Quiz_question = (prop) => {
   
-  const{time,setid,score,setScores}=useContext(Datacontext)
-  const[ind,setind]=useState(0)
+  const{time,setid,score,setScores,mainarr,setmainarr,ind,setind}=useContext(Datacontext)
+ 
   const[finish,setfinish]=useState(false)
   const divRef = useRef({});
- const [mainarr,setmainarr]=useState([])
+//  const [mainarr,setmainarr]=useState([])
  const [isFullscreen, setIsFullscreen] = useState(true);
     
 
@@ -25,7 +26,6 @@ export const Quiz_question = (prop) => {
          divRef.current.msRequestFullscreen();
        }
      };
- 
 
      const checkFullscreen = () => {
        const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
@@ -54,7 +54,7 @@ export const Quiz_question = (prop) => {
     return <Result></Result>
    }
    else{
-    enterFullScreen()
+     enterFullScreen()
    }
 
     const fechdata=async()=>{
@@ -73,7 +73,7 @@ export const Quiz_question = (prop) => {
         
         if(score.length==0)
       {
-        const array = new Array(mainarr.length).fill(0);
+        const array = new Array(mainarr.length).fill(-1);
           setScores(array)
         }
 
@@ -91,16 +91,19 @@ export const Quiz_question = (prop) => {
 </div>
 
 <div>
-  {
+  {/* {
     // filter se repleace karna hai
-   mainarr.map((data,index)=>{
+  mainarr.map((data,index)=>{
    if(index==ind)
    {
-    return <Singlequestion key={index} index={index} question={data.question} options={data.options} answer={data.answer}></Singlequestion>
-   }}
-  )
+     return <Singlequestion key={index} index={index} question={data.question} options={data.options} answer={data.answer}></Singlequestion>
+   }
   }
+  )
+  } */}
 </div> 
+
+<Question></Question>
 
 <div className="flex justify-around w-[500px] h-[50px]">
   
