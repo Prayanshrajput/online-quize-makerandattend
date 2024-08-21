@@ -108,7 +108,6 @@ export const Singup = () => {
     <div className="flex w-[95%] lg:w-[528px] lg:h-[56px] rounded-[8px] bg-[#EBEBEB] ">
     <input className="w-[80%] h-[35px] bg-[#EBEBEB] rounded-[8px] focus:outline-none   pr-[12px] pl-[12px] " type={pass?"password":"text"} name='password' value={data.password} onChange={inputhandler} placeholder='Password' />
    <div className="w-[20%] flex justify-center items-center"> 
-    {/* <img src="/show.png" className="w-[24px] h-[24px]" onClick={passwordhandler} alt="" /> */}
     {pass?<div onClick={passwordhandler}>Show</div >:<div onClick={passwordhandler}>Hide</div>}
     </div>
     </div>

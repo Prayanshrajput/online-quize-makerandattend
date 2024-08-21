@@ -97,7 +97,6 @@ return (
         <div className="flex w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] ">
         <input className="w-[80%] bg-[#EBEBEB] rounded-[8px] focus:outline-none   pr-[12px] pl-[12px] " name="password" onChange={Inputhandler} value={data.password} type={pass?"password":"text"} placeholder='Password' />
        <div className="w-[20%] flex justify-center items-center"> 
-        {/* <img src='/show.png' className="w-[24px] h-[24px]" onClick={passwordhandler} alt=""/> */}
         {pass?<div className="flex" onClick={passwordhandler}>Show</div >:<div onClick={passwordhandler}>Hide</div>}
        </div>
         </div>
