@@ -17,6 +17,7 @@ const[log,setlog]=useState(false)
 const [mainarr,setmainarr]=useState([])
 const[ind,setind]=useState(0)
 const[selectedoption,setsetectedoption]=useState(score)
+const[mnav,setmnav]=useState(false)
 const num=true;
 
 useEffect(()=>{
@@ -47,6 +48,7 @@ const value={
     quiz,setquiz,
     id,setid,
     num,log,setlog,mainarr,setmainarr,ind,setind,
+    mnav,setmnav,
     selectedoption,setsetectedoption,
     cookies, setCookie,removeCookie,
 }

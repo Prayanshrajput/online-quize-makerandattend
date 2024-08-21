@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Datacontext } from '../context/Datacontext'
 import { Quiz_question } from './Quiz_question'
+import { List_navbar } from './List_navbar'
 
 export const Quiz = () => {
 
-    const{quiz,setquiz,num,id,setid}=useContext(Datacontext)
+    const{quiz,setquiz,num,id,setid,mnav}=useContext(Datacontext)
    
 
 if(id.id){
@@ -29,6 +30,9 @@ return (
           })
         }
       </div>
+      {
+       mnav?<List_navbar></List_navbar>:<div></div>
+      }
   </div>
     )
 

@@ -4,10 +4,11 @@ import { Addquestion } from './Addquestion'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie'
+import { List_navbar } from './List_navbar';
 
 
 export const Createmain = () => {
-    const{id,setid,setobj,obj}=useContext(Datacontext)
+    const{id,setid,setobj,obj,mnav}=useContext(Datacontext)
     const[data,setdata]=useState({quizetitle:"",time:"",email:Cookies.get("data")})
 
     if(id){
@@ -52,12 +53,15 @@ if(obj.idofquize){
     }
 
   return (
-   <div className=" flex flex-col justify-center items-center h-fit md:h-screen w-screen bg-gray-400 text-[20px] gap-6 font-bold">
+   <div className=" flex flex-col justify-center items-center h-screen w-screen bg-gray-400 text-[20px] gap-6 font-bold">
    <label htmlFor="quizetitle">Title osdfdsf Quiz</label>
     <input className="md:w-[350px] w-[300px] h-[50px] border border-slate-950 text-blue-500" type="text" placeholder="Title of Quiz" name="quizetitle" id="" onChange={inputhandler} />
     <label htmlFor="numberofque">Time  (hours : minites : seconds)</label>
     <input className="w-[350px] h-[50px] border border-slate-950" type="text" name="time" placeholder="hours : minites : seconds" onChange={inputhandler} />
     <button className="hover:bg-green-600" onClick={submithandler}>Submit</button>
+    {
+       mnav?<List_navbar></List_navbar>:<div></div>
+      }
     <ToastContainer />
    </div>
   )

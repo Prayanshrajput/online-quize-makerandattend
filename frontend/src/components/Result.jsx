@@ -64,7 +64,7 @@ mainarr.map((data,index)=>{
 
        <div className="flex gap-5">
        <div className="flex w-[150px] h-[100px]    text-[20px] font-bold justify-center items-center  bg-red-400">
-        Incorrect {incorect}
+        Incorrect {mainarr.length-(incorect+correct)}
         </div>
         <div className="flex w-[150px] h-[100px]    text-[20px] font-bold justify-center items-center bg-yellow-400">
         Attempt {correct+incorect}
@@ -75,7 +75,7 @@ mainarr.map((data,index)=>{
         Score {correct}
        </div>
 
-      <div className="flex justify-center items-center text-[20px] w-[70px] h-[25px] font-bold bg-black text-white hover:bg-white hover:text-black" onClick={()=>{ setid("")}}>
+      <div className="flex justify-center items-center text-[20px] w-[70px] h-[25px] font-bold bg-black text-white hover:bg-white hover:text-black" onClick={()=>{  setid("")}}>
     Back
       </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import { Datacontext } from '../context/Datacontext'
 import { Quiz_question } from './Quiz_question'
+import { List_navbar } from './List_navbar'
 
 export const Profile = () => {
  
@@ -10,7 +11,7 @@ postdata()
 },[])
 
 
-const{quiz,setquiz,num,id,setid}=useContext(Datacontext)
+const{quiz,setquiz,num,id,setid,mnav}=useContext(Datacontext)
 
 const data= {email:""}
 const[createquiz,setcreatequiz]=useState([{nameofquize:"emaple",time:"00:10:00"}
@@ -28,20 +29,13 @@ const postdata=async()=>{
       }
   }  )
 
-  // const response= await fetch(`http://localhost:2222/userprofile`,{
-  //     method:"POST",
-  //     body:JSON.stringify(data),
-  //     headers:{
-  //       "Content-Type":"application/json"
-  //     }
-  //   })
-
     const result=await response.json()
     console.log(result)
     if(result.success==true){
       setcreatequiz(result.quizdata)
     }
   }
+  
   catch(error){
     alert(error.message)
   }
@@ -90,7 +84,9 @@ if(id.id){
           })
         }
       </div>
-
+      {
+       mnav?<List_navbar></List_navbar>:<div></div>
+      }
     </div>
   )
 }

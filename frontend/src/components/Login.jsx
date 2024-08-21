@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Datacontext } from '../context/Datacontext'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { List_navbar } from './List_navbar';
 
 export const Login = () => {
 
@@ -11,7 +12,7 @@ export const Login = () => {
     const[pass,setpass]=useState(true)
     const[Showhandler,setShowhandler]=useState(false)
     const[data,setdata]=useState({email:"",password:""})
-    const{setCookie,setlog}=useContext(Datacontext)
+    const{setCookie,setlog,mnav}=useContext(Datacontext)
 
     const nevigate=useNavigate()
 
@@ -86,30 +87,33 @@ export const Login = () => {
 
 
 return (
-  <div className="flex w-screen h-screen justify-center items-center">       
-        <div className="flex flex-col gap-[32px] w-[648px] h-[556px]  rotate-[16px] border border-[#CECECE] p-[60px] bg-slate-50">
-        <div className="flex justify-center text-[40px] h-[58px] w-[528px] font-[600]">Welcome to<div className="text-[#4534AC]">&nbsp;Quiz_Master </div></div>
+  <div className="flex w-screen h-screen justify-center lg:items-center">       
+        <div className="flex  flex-col w-[95%] h-fit  lg:gap-[32px] lg:w-[648px] lg:h-[556px]  lg:rotate-[16px] border border-[#CECECE] mt-[50px] lg:p-[60px] bg-slate-50">
+        <div className="flex justify-center  text-[25px]  lg:text-[40px] lg:h-[58px] lg:w-[528px] font-[600]">Welcome to<div className="text-[#4534AC]">&nbsp;Quiz_Master </div></div>
       
-       <div className="flex flex-col w-[528px] h-[290px] gap-[42px]">
-        <input className="flex w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] pr-[12px] pl-[12px]" type="email" name="email" onChange={Inputhandler} value={data.email} id="" placeholder="Your email" />
+       <div className="flex flex-col w-[100%] justify-center items-center  lg:w-[528px] h-[290px] gap-6 lg:gap-[42px]">
+        <input className="flex  w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] lg:pr-[12px] lg:pl-[12px]" type="email" name="email" onChange={Inputhandler} value={data.email} id="" placeholder="Your email" />
 
-        <div className="flex w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] ">
-        <input className="w-[90%] bg-[#EBEBEB] rounded-[8px] focus:outline-none   pr-[12px] pl-[12px] " name="password" onChange={Inputhandler} value={data.password} type={pass?"password":"text"} placeholder='Password' />
-       <div className="w-[10%] flex justify-center items-center"> 
+        <div className="flex w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] ">
+        <input className="w-[80%] bg-[#EBEBEB] rounded-[8px] focus:outline-none   pr-[12px] pl-[12px] " name="password" onChange={Inputhandler} value={data.password} type={pass?"password":"text"} placeholder='Password' />
+       <div className="w-[20%] flex justify-center items-center"> 
         {/* <img src='/show.png' className="w-[24px] h-[24px]" onClick={passwordhandler} alt=""/> */}
-        {pass?<div onClick={passwordhandler}>Show</div >:<div onClick={passwordhandler}>Hide</div>}
+        {pass?<div className="flex" onClick={passwordhandler}>Show</div >:<div onClick={passwordhandler}>Hide</div>}
        </div>
         </div>
 
-        <button onClick={submithandler} className="flex justify-center items-center w-[528px] ] h-[52px] text-[20px] rounded-[8px] bg-gradient-to-t from-[#4B36CC] to-[#9C93D4] font-[400] text-white">Login</button>
+        <button onClick={submithandler} className="flex w-[90%] justify-center items-center  lg:w-[528px] ] h-[52px] text-[20px] rounded-[8px] bg-gradient-to-t from-[#4B36CC] to-[#9C93D4] font-[400] text-white">Login</button>
        </div>
 
        <div className="flex justify-center items-center h-[24px] gap-[4px]">
-       <div className="flex justify-end w-[307px] h-[24px] text-[#606060] text-[20px]" >Don’t have an account? Create a</div>
-        <Link className="flex w-[127px] h-[24px]  text-[#0054A1] text-[20px]" to={"/singup"}>new account.</Link>
+       <div className="flex justify-end w-[70%] lg:w-[307px] h-[24px] text-[#606060] lg:text-[20px]" >Don’t have an account? Create a</div>
+        <Link className="flex lg:w-[127px] w-[30%] h-[24px]  text-[#0054A1] lg:text-[20px]" to={"/singup"}>new account.</Link>
        </div>
        
     </div>
+    {
+       mnav?<List_navbar></List_navbar>:<div></div>
+      }
     <ToastContainer />
     </div>
 )
