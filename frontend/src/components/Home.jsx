@@ -23,14 +23,14 @@ export const Home = () => {
   }
   return (
     
-    <div className=" flex flex-col w-screen h-screen  bg-gray-200">
+    <div className=" flex flex-col w-screen h-screen  bg-gray-300">
 
        <div className="flex w-screen h-screen justify-center items-center lg:flex-row flex-col gap-8">
-       <NavLink to="/quiz" className="flex border border-blue-600  w-[250px] bg-blue-200  hover:bg-green-300 h-[100px] justify-center items-center text-[30px]  font-bold">Attemp Quiz</NavLink>
-       <NavLink to="/createquiz" className="flex border border-blue-600 w-[250px] hover:bg-green-300 bg-blue-200 h-[100px] justify-center items-center text-[30px] font-bold">Create Quiz</NavLink>
+       <NavLink to="/quiz" className=" rounded-lg hover:animate-bounce flex border border-blue-600  w-[250px] bg-blue-200  hover:bg-green-300 h-[100px] justify-center items-center text-[30px]  font-bold">Attemp Quiz</NavLink>
+       <NavLink to="/createquiz" className="rounded-lg hover:animate-bounce flex border border-blue-600 w-[250px] hover:bg-green-300 bg-blue-200 h-[100px] justify-center items-center text-[30px] font-bold">Create Quiz</NavLink>
        </div>
 
-     {
+      {
        mnav?<List_navbar></List_navbar>:<div></div>
       }
         

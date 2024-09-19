@@ -1,6 +1,6 @@
 import React, { useContext,useRef, useEffect, useState } from 'react'
 import { Datacontext } from '../context/Datacontext'
-import { Singlequestion } from './Singlequestion'
+// import { Singlequestion } from './Singlequestion'
 import { Result } from './Result'
 import { Timer } from './Timer'
 import { Question } from './Question'
@@ -84,24 +84,11 @@ export const Quiz_question = (prop) => {
   
 
   return (
-<div ref={divRef} className="flex flex-col w-screen h-screen  items-center gap-5">
+<div ref={divRef} className="flex flex-col w-screen h-screen bg-gray-300  items-center gap-5">
 <div className="flex justify-around w-screen bg-gray-400">
 <div className="  w-[40%] flex text-[25px] font-bold">Question - {ind+1}/{mainarr.length}</div>
 <Timer className=" w-[40%]"></Timer>
 </div>
-
-<div>
-  {/* {
-    // filter se repleace karna hai
-  mainarr.map((data,index)=>{
-   if(index==ind)
-   {
-     return <Singlequestion key={index} index={index} question={data.question} options={data.options} answer={data.answer}></Singlequestion>
-   }
-  }
-  )
-  } */}
-</div> 
 
 <Question></Question>
 

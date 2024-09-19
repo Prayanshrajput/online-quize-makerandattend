@@ -50,7 +50,8 @@ exports.login=async (req,res)=>{
         return res.json({
             success:true,
             message:"Successfully Login",
-            token
+            token,
+            userdata:check.username
         }) 
     }
 

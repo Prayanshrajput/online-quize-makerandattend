@@ -73,6 +73,7 @@ export const Login = () => {
         if(result.success==true){
           setCookie('token', result.token, { path: '/' });
           setCookie('data', data.email, { path: '/' });
+          setCookie('username', result.userdata, { path: '/' });
           setlog(true)
           nevigate("/home")
         }

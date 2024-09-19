@@ -3,12 +3,14 @@ import Cookies from 'js-cookie'
 import { Datacontext } from '../context/Datacontext'
 import { Quiz_question } from './Quiz_question'
 import { List_navbar } from './List_navbar'
+import { Edit } from './Edit'
 
 export const Profile = () => {
  
 useEffect(()=>{
 postdata()
 },[])
+
 
 
 const{quiz,setquiz,num,id,setid,mnav}=useContext(Datacontext)
@@ -42,7 +44,9 @@ const postdata=async()=>{
 }
 
 
+
 if(id.id){
+  console.log(id)
   return <Quiz_question  id={id.id} time={id.time}></Quiz_question>
   }
 
@@ -51,7 +55,7 @@ if(id.id){
     <div className="flex flex-col w-screen h-screen">
         <div className="flex flex-col text-[25px] gap-2 font-bold">
             <h1>User Name</h1>
-            <h1>Prayansh Rajput</h1>
+            <h1>{Cookies.get("username")||"Quizer"}</h1>
         </div>
 
         {/* <div className="bg-slate-400 flex flex-col w-screen h-[300px] gap-5">
@@ -67,6 +71,7 @@ if(id.id){
            
            
         </div> */}
+
 
 <div className="flex w-screen   justify-center items-center flex-wrap gap-5">
       <div className=" flex  w-screen justify-center items-center text-[25px] font-bold text-red-500">

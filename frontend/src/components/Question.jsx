@@ -38,24 +38,30 @@ if(mainarr.length==0){
 }
   console.log(mainarr)
   return (
-<div>
-<div className="flex flex-col h-[400px] w-[800px] min-h-fit gap-5  items-center bg-slate-300">
-       
-       <div className="flex text-[25px] mt-[20px] font-bold">{mainarr[ind].question}</div>
-      <div className="flex flex-wrap gap-5 ml-5 items-center justify-center">
-      {mainarr[ind].options.map((data,index)=>{
-       return <div
-       key={index}
-        className={`flex w-[300px] h-[70px]  hover:bg-white justify-center items-center border border-black ${selectedoption[ind]==index?`bg-white`:`bg-transparent`} `}
-         onClick={optionshandler}
-        //  selected={selectedoption}
-        id={index}
-        >{data}</div>
-      })}
-      </div>
-    
-      {/* <div>{data.answer}</div> */}
-    </div>  
-</div>
+
+<div className='flex  w-screen h-fit border-b-2 border-black  bg-white '>
+  
+ <div className='flex lg:flex-row  flex-col w-full h-full '>
+ <div className='flex lg:w-[60%] justify-center w-full h-full '>
+  <div className="flex flex-wrap text-wrap w-[90%] justify-center text-[25px] mt-[20px] font-bold">{mainarr[ind].question}</div>
+  </div>
+  
+  <div className='flex w-full lg:w-[40%]  pt-9 pl-2 pb-9 h-fit justify-center lg:border-l-2 border-black '>
+  <div className='flex lg:flex-col flex-wrap gap-7'>
+  {mainarr[ind].options.map((data,index)=>{
+         return <div
+         key={index}
+          className={`flex rounded-lg w-[150px] h-[50px]  overflow-hidden text-wrap lg:w-[300px] lg:h-[70px]  hover:bg-green-200 justify-center items-center border border-black ${selectedoption[ind]==index?`bg-blue-300`:`bg-transparent`} `}
+           onClick={optionshandler}
+          //  selected={selectedoption}
+          id={index}
+          >{data}</div>
+        })}
+  </div>
+  </div>
+
+ </div>
+  
+  </div>
   )
 }

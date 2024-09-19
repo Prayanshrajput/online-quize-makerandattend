@@ -19,7 +19,8 @@ const router=createBrowserRouter([
   {
     path: "/",
     element : <Layout/>,
-  
+
+    
    children:[
     {
       path: "/",
@@ -55,7 +56,7 @@ const router=createBrowserRouter([
     },
     {
       path:"/try",
-      element:<Question></Question>
+      element:<Profile></Profile>
     }
   ]
 },

@@ -53,16 +53,18 @@ if(obj.idofquize){
     }
 
   return (
-   <div className=" flex flex-col justify-center items-center h-screen w-screen bg-gray-400 text-[20px] gap-6 font-bold">
-   <label htmlFor="quizetitle">Title osdfdsf Quiz</label>
-    <input className="md:w-[350px] w-[300px] h-[50px] border border-slate-950 text-blue-500" type="text" placeholder="Title of Quiz" name="quizetitle" id="" onChange={inputhandler} />
+   <div className="w-screen h-screen flex">
+    <div className=" flex flex-col pt-[30%] lg:pt-0 lg:justify-center items-center h-screen w-screen bg-gray-400 text-[20px] gap-6 font-bold">
+   <label htmlFor="quizetitle" className=" font-extrabold text-[30px] text-purple-600">Title of Quiz</label>
+    <input className="rounded-md md:w-[350px] w-[300px] h-[50px] border border-slate-950 text-blue-500" type="text" placeholder="Title of Quiz" name="quizetitle" id="" onChange={inputhandler} />
     <label htmlFor="numberofque">Time  (hours : minites : seconds)</label>
-    <input className="w-[350px] h-[50px] border border-slate-950" type="text" name="time" placeholder="hours : minites : seconds" onChange={inputhandler} />
-    <button className="hover:bg-green-600" onClick={submithandler}>Submit</button>
-    {
-       mnav?<List_navbar></List_navbar>:<div></div>
-      }
+    <input className="rounded-md w-[85%] h-[7%] lg:w-[350px] lg:h-[50px] border border-slate-950" type="text" name="time" placeholder="hours : minites : seconds" onChange={inputhandler} />
+    <button className="hover:bg-green-600 bg-green-400 p-2 rounded-md" onClick={submithandler}>Submit</button>
     <ToastContainer />
+   </div>
+   {
+    mnav?<List_navbar></List_navbar>:<div></div>
+   }
    </div>
   )
 }

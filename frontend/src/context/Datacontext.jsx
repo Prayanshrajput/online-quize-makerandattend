@@ -18,6 +18,7 @@ const [mainarr,setmainarr]=useState([])
 const[ind,setind]=useState(0)
 const[selectedoption,setsetectedoption]=useState(score)
 const[mnav,setmnav]=useState(false)
+
 const num=true;
 
 useEffect(()=>{
@@ -57,4 +58,5 @@ return <Datacontext.Provider value={value}>
     {children}
 </Datacontext.Provider>
 }
+
 
