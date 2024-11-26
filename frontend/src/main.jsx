@@ -14,6 +14,7 @@ import { Profile } from './components/Profile.jsx'
 import { Singup } from './components/Singup.jsx'
 import { Protected } from './components/Protected.jsx'
 import { Question } from './components/Question.jsx'
+import { Addquestion } from './components/Addquestion.jsx'
 
 const router=createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router=createBrowserRouter([
     },
     {
       path:"/try",
+      element:<Addquestion></Addquestion>
+    },
+    {
+      path:"/try2",
       element:<Profile></Profile>
     }
   ]
@@ -65,6 +70,7 @@ const router=createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <DatacontextProvider>
   <RouterProvider router={router}>
+    <App></App>
   </RouterProvider>
   </DatacontextProvider>,
 )

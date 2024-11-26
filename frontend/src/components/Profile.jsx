@@ -52,43 +52,129 @@ if(id.id){
 
   return (
    
-    <div className="flex flex-col w-screen h-screen">
-        <div className="flex flex-col text-[25px] gap-2 font-bold">
-            <h1>User Name</h1>
-            <h1>{Cookies.get("username")||"Quizer"}</h1>
+    <div className="flex flex-col w-screen h-screen gap-5">
+      
+{/*first*/}
+        <div className="flex mt-5 gap-[30%] w-screen h-[30%] border border-gray-400  border-solid">
+{/* first div */}
+            <div className='flex flex-col justify-center gap-3 items-center w-[30%] h-full'>
+              <div className='w-fit h-fit'>
+                <label className='text-xl ' htmlFor="">Username :-</label>
+                <div className='flex w-[180px] h-[25px] border border-black rounded-md '></div>
+              </div>
+              <div>
+                <label className='text-xl ' htmlFor="">Total No. Of Quiz :-</label>
+                <div className='flex w-[180px] h-[25px] border border-black rounded-md'></div>
+              </div>
+            </div>
+{/* second part */}
+            <div className='flex justify-center items-center w-[50%] h-full'>
+                  <div className='flex w-[150px] h-[150px] border border-black  rounded-full'>
+                    <img src="/default.png" alt="" className='w-fit h-fit scale-50' />
+                  </div>
+            </div>
         </div>
 
-        {/* <div className="bg-slate-400 flex flex-col w-screen h-[300px] gap-5">
-            <h1 className="text-[25px]">Your Quiz</h1>
-           <div className="flex w-svw  gap-5 overflow-x-scroll">
-           {
-             createquiz.map((data)=>{return <div  className="flex text:[20px] md:text-[25px] rounded-md font-bold flex-col justify-center items-center hover:bg-green-400 bg-slate-200 h-[100px] md:h-[200px] w-[150px] md:w-[250px] " >
-              <div>{data.nameofquize}</div>
-              <div>{data.time}</div>
-             </div>})
-            }
-           </div>
-           
-           
-        </div> */}
+  {/* second       */}
+  <div className='flex ml-4 flex-col w-screen h-1/2 gap-7'>
+  {/* heading of quize */}
+    <div className='text-2xl font-bold'>Total No. Of Quiz :-</div>
+  {/* detail of quiz */}
+  <div className='flex flex-wrap w-full overflow-x-scroll h-[500px] gap-8'>
+    <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>
 
+    <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>
 
-<div className="flex w-screen   justify-center items-center flex-wrap gap-5">
-      <div className=" flex  w-screen justify-center items-center text-[25px] font-bold text-red-500">
-        YOUR QUIZ
-      </div>
-        {
-          createquiz.map((data,index)=>{
-              return   <div  key={index} name="start"  onClick={(e)=>{
-                  setid({id:e.target.id,time:e.target.getAttribute('time') }) 
-              }}  className="flex text:[20px] md:text-[25px] rounded-md font-bold flex-col justify-center items-center hover:bg-green-400 bg-slate-200 h-[100px] md:h-[200px] w-[150px] md:w-[250px] " id={data.idofquize} time={data.time}>
-             {data.nameofquize} <br />
-           Time - {data.time}
-           <div>Edit</div>
-          </div>
-          })
-        }
-      </div>
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>   
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>  
+
+     <div className='flex items-center flex-col gap-2  w-[200px] h-[250px] border border-gray-400'>
+        <div className='flex rounded-lg h-4/5 w-full border border-black'>
+        <img src="/default.png" alt="" className='w-fit h-fit' /></div>
+        <div className='flex pl-2 mb-2 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+            <div>Result</div>
+            <div>Condition</div>
+        </div>
+    </div>   
+    
+</div>
+
+  </div>
+
       {
        mnav?<List_navbar></List_navbar>:<div></div>
       }

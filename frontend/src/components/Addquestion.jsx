@@ -59,7 +59,7 @@ const answerhandler=(e)=>{
 
 return (
  <div className="flex w-screen h-screen">
-   <div className="flex flex-col md:flex-row h-screen min-h-fit w-screen bg-yellow-500">
+   <div className="mt-2 pl-5 gap-5 flex flex-col md:flex-row h-screen min-h-fit w-screen">
        <div className="flex flex-col  w-screen md:w-[50%] h-fit  gap-5 pb-5 pt-5">
  
  <div className="flex justify-around text-[20px] font-bold">
@@ -70,14 +70,14 @@ return (
  {/* questions */}
  <div className="flex flex-col">
  <label className="text-[20px] ml-1 font-bold" htmlFor="">Question</label>
- <input className=" rounded-md ml-1 mr-1 text-[20px] font-semibold text-black  border border-black bg-slate-300 " type="text" name="question" value={obj.question} id="" onChange={maininputhandler} />
+ <input className=" rounded-md ml-1 mr-1 text-[20px] font-semibold text-black  border border-black  " type="text" name="question" value={obj.question} id="" onChange={maininputhandler} />
  </div>
  
  {/* option for  */}
  <label className="text-[20px] font-bold" htmlFor="options">Options( Minimum 2 )</label>
  <div>
  <input className="rounded-md ml-1 mr-1 text-[20px]  border border-black" type="text" name="options" value={inp} onChange={changehandler} />
- <button className=" rounded-md font-bold w-[50px] h-[34px] bg-gray-500 hover:bg-green-400" onClick={()=>{
+ <button className=" rounded-md font-bold w-[50px] h-[34px] bg-green-300 hover:bg-green-500" onClick={()=>{
    setobj((prev)=>{return {...prev,options:[...obj.options,inp]}})
    setinp("")
  }}>ADD</button>
@@ -91,7 +91,7 @@ return (
  
  </div>
  
- <div className="flex flex-col  justify-end border  h-fit w-screen md:w-[50%] md:justify-start md:h-screen border-black gap-5">
+ <div className="flex flex-col  justify-end   h-fit w-screen md:w-[40%] md:justify-start md:h-screen gap-5">
  <div className="flex flex-col  min-h-fit lg:h-[60%] gap-3">
    <h1 className="flex flex-wrap text-[20px] font-bold break-words">Current question</h1>
    <div className="text-[18px] font-semibold ml-2  w-[96%]  center break-words  " >{obj.question||"None"}</div>
