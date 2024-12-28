@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom'
  import {Home} from './Home'
 export const Layout = () => {
   return (
-    <div>
+    <div className='flex-col max-w-screen '>
         <Navbar></Navbar>
-        <Outlet></Outlet>
-     
+        <Outlet></Outlet >
+
     </div>
   )
 }

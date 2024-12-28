@@ -93,7 +93,7 @@ return (
         <div className="flex justify-center  text-[25px]  lg:text-[40px] lg:h-[58px] lg:w-[528px] font-[600]">Welcome to<div className="text-[#4534AC]">&nbsp;Quiz_Master </div></div>
       
        <div className="flex flex-col w-[100%] justify-center items-center  lg:w-[528px] h-[290px] gap-6 lg:gap-[42px]">
-        <input className="flex  w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] lg:pr-[12px] lg:pl-[12px]" type="email" name="email" onChange={Inputhandler} value={data.email} id="" placeholder="Your email" />
+        <input className="flex pl-2  w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] lg:pr-[12px] lg:pl-[12px]" type="email" name="email" onChange={Inputhandler} value={data.email} id="" placeholder="Your email" />
 
         <div className="flex w-[90%] lg:w-[528px] h-[56px] rounded-[8px] bg-[#EBEBEB] ">
         <input className="w-[80%] bg-[#EBEBEB] rounded-[8px] focus:outline-none   pr-[12px] pl-[12px] " name="password" onChange={Inputhandler} value={data.password} type={pass?"password":"text"} placeholder='Password' />

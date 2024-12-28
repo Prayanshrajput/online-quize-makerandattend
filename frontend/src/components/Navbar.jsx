@@ -20,9 +20,9 @@ const statushandler=()=>{
 }
 
   return (
-   <div className='flex mt-[1%] w-screen h-fit justify-center'>
+   <div className='flex mt-2 w-screen h-fit justify-center'>
     <div className="flex justify-between shadow-lg items-center w-[95%] h-[60px]  font-bold border border-white ">
-    <div className="flex w-[50%] items-center text-blue-700  pl-[10%] h-[100%] font-extrabold text-[25px] animate-bounce " >Quiz Master</div>
+    <div className="flex w-[50%] items-center text-blue-700  pl-[10%] h-[100%] font-extrabold text-[20px] lg:text-[25px] animate-pulse lg:animate-bounce " >Quiz Master</div>
     <div className="flex w-[50%] pr-5 justify-end lg:hidden " onClick={()=>(setmnav(!mnav))}> <FaListUl size={25} className="flex bg-white" /></div>
      <div className=" hidden lg:flex justify-evenly items-center w-[60%] h-[100%] text-[20px]">
  

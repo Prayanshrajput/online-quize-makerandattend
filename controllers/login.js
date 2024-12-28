@@ -29,9 +29,12 @@ exports.login=async (req,res)=>{
        }
 
     if(status){
-        const payload = {
+       const payload = {
             useid:email
           };
+
+ 
+
           const secret = 'prayansh123';
 
           const options = {
