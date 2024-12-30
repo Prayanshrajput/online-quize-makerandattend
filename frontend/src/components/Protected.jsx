@@ -37,7 +37,7 @@ export const Protected = (prop) => {
       if(result.success){
          setstatus(true)
       }
-  
+
       }
       else{
          navigate("/login")

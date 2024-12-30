@@ -16,8 +16,8 @@ postdata()
 const{quiz,setquiz,num,id,setid,mnav}=useContext(Datacontext)
 
 const data= {email:""}
-const[createquiz,setcreatequiz]=useState([{nameofquize:"emaple",time:"00:10:00"}
-])
+const[createquiz,setcreatequiz]=useState([])
+
 const[attendquiz,setattendquiz]=useState([])
 
 const postdata=async()=>{
@@ -34,6 +34,7 @@ const postdata=async()=>{
     const result=await response.json()
     console.log(result)
     if(result.success==true){
+      console.log(result)
       setcreatequiz(result.quizdata)
     }
   }
@@ -61,11 +62,11 @@ if(id.id){
             <div className='flex  flex-col justify-center gap-3 items-center w-[50%] h-full'>
               <div className='w-fit h-fit'>
                 <label className='text-xl ' htmlFor="">Username :-</label>
-                <div className='flex w-[180px] h-[25px] border border-black rounded-md '></div>
+                <div className='mt-2 flex w-[180px] pl-1 h-[25px] border border-black rounded-md '>{Cookies.get("username")}</div>
               </div>
               <div>  
                 <label className='text-xl ' htmlFor="">Total No. Of Quiz :-</label>
-                <div className='flex w-[180px] h-[25px] border border-black rounded-md'></div>
+                <div className='mt-2 flex w-[180px] h-[25px] border justify-center font-bold border-black rounded-md'>{createquiz.length}</div>
               </div>
             </div>
 {/* second part */}
@@ -81,16 +82,17 @@ if(id.id){
   {/* heading of quize */}
     <div className=' flex text-2xl font-bold'>Total No. Of Quiz :-</div>
   {/* detail of quiz */}
-  <div className=' flex justify-center flex-wrap w-fit overflow-y-scroll h-[500px] gap-8'>
+  <div className=' flex justify-around flex-wrap w-full overflow-y-scroll h-[500px] gap-8'>
     
     {
-      arr.map((data)=>{
-        return <div className='flex items-center flex-col gap-2 rounded-md w-[150px] h-[185px]  lg:w-[200px] lg:h-[250px] border border-gray-600'>
+      createquiz.map((data)=>{
+        return <div className='flex items-center flex-col gap-2 rounded-md min-w-fit w-[150px] h-[185px]  lg:w-[200px] lg:h-[250px] border border-gray-600'>
         <div className='flex rounded-lg h-fit w-full '>
         <img src="/default.png" alt="" className='w-fit h-fit' /></div>
-        <div className='flex pl-2 mb-4 rounded-md flex-col h-1/5 w-[90%] border border-black'>
+        <div className='flex px-2 mb-4 rounded-md flex-col h-1/5 w-[90%] min-w-fit min-h-fit border border-black'>
+            <div >Name - {data.nameofquize}</div>
             <div>Result</div>
-            {/* <div>Condition</div> */}
+            
         </div>
     </div>
       })
