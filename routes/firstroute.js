@@ -10,6 +10,7 @@ const {sing_up}=require("../controllers/sing_up")
 const { login } = require("../controllers/login")
 const { login_status } = require("../controllers/login_status")
 const { profile } = require("../controllers/profile")
+const { record } = require("../controllers/record")
 
 
 route.post("/addquestion",question)
@@ -22,5 +23,6 @@ route.post("/login",login)
 route.post("/login_status",login_status)
 route.post("/userprofile",profile)
 route.post("/userquiz",userquiz)
+route.patch("/record",record)
 
 module.exports=route

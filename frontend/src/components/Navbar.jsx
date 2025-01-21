@@ -28,27 +28,27 @@ const statushandler=()=>{
  
  <NavLink to="/home" className=" text-blue-700  py-[8px] px-[12px] rounded-[8px]  group">
     Home
-    <div className="w-[100%] h-[2px] bg-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="w-0 h-[3px]  rounded-lg bg-blue-700  group-hover:w-full 	duration-1000 delay-550"></div>
     </NavLink>
 
  <NavLink to="/createquiz" className=" text-blue-700 py-[8px] px-[12px] rounded-[8px] group ">
  Createquize
- <div className="w-[100%] h-[2px] bg-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
+ <div className="w-0 h-[3px]  rounded-lg bg-blue-700  group-hover:w-full 	duration-1000 delay-550"></div>
     </NavLink>
 
     <NavLink to="/quiz" className=" text-blue-700 py-[8px] px-[12px] rounded-[8px]  group  ">
     Quiz
-    <div className="w-[100%] h-[2px] bg-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="w-0 h-[3px]  rounded-lg bg-blue-700  group-hover:w-full 	duration-1000 delay-550"></div>
     </NavLink>
 
     <NavLink to="/profile" className=" text-blue-700 py-[8px] px-[12px] rounded-[8px] group ">
     Profile
-    <div className="w-[100%] h-[2px] bg-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="w-0 h-[3px]  rounded-lg bg-blue-700  group-hover:w-full 	duration-1000 delay-550"></div>
     </NavLink>
 
     <NavLink to={log?"":"/login"} className=" text-blue-700 py-[8px] px-[12px] rounded-[8px] group " onClick={statushandler}>
     {log?'Logout':'Login'}
-    <div className="w-[100%] h-[2px] bg-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="w-0 h-[3px]  rounded-lg bg-blue-700  group-hover:w-full 	duration-1000 delay-550"></div>
     </NavLink>
 
     

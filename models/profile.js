@@ -30,6 +30,16 @@ const profile=new mongoose.Schema({
             type:String
         }
     ],
+    quiz:[
+        {
+            quizid:{type:String},
+            score:{type:String},
+            Numberofattend:{type:String},
+            creater:{type:String ,
+                default:"N"
+            }
+        }
+    ],
     
 })
 

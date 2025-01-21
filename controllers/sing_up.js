@@ -1,7 +1,7 @@
 
 const singup_model=require("../models/sing_up")
 const profile_model=require("../models/profile")
-const bcrypt=require("bcryptjs")
+const bcrypt=require("bcryptjs")    
 
 
 exports.sing_up=async (req,res)=>{
